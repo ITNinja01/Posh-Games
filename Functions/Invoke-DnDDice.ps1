@@ -11,6 +11,9 @@ This is a bonus script for the Dungeons & Dragons game. The user can use this sc
 .EXAMPLE
 Invoke-DnDDice -Die d20
 .NOTES
+Developed by: ITNinja01
+Version: 2.0.0
+Date: 10-18-2026
 #>
 
 [CmdletBinding()]   
@@ -48,7 +51,7 @@ $DieFace3 = @"
    /   3     \______\
   /___________\      
 "@  
-$Die_Face_4 = @"
+$DieFace4 = @"
          _______
        /       /\ 
       /   x   /  \
@@ -57,7 +60,7 @@ $Die_Face_4 = @"
    /   4     \______\
   /___________\      
 "@  
-$Die_Face_5 = @"
+$DieFace5 = @"
          _______
        /       /\ 
       /   x   /  \
@@ -66,7 +69,7 @@ $Die_Face_5 = @"
    /   5     \______\
   /___________\      
 "@  
-$Die_Face_6 = @"
+$DieFace6 = @"
          _______
        /       /\ 
       /   x   /  \
@@ -75,7 +78,7 @@ $Die_Face_6 = @"
    /   6     \______\
   /___________\      
 "@  
-$Die_Face_7 = @"
+$DieFace7 = @"
          _______
        /       /\ 
       /   x   /  \
@@ -84,7 +87,7 @@ $Die_Face_7 = @"
    /   7     \______\
   /___________\      
 "@  
-$Die_Face_8 = @"
+$DieFace8 = @"
          _______
        /       /\ 
       /   x   /  \
@@ -93,7 +96,7 @@ $Die_Face_8 = @"
    /   8     \______\
   /___________\      
 "@ 
-$Die_Face_9 = @"
+$DieFace9 = @"
          _______
        /       /\ 
       /   x   /  \
@@ -200,7 +203,7 @@ $DieFace20 = @"
                      _/############//   (@::@)   \\############\_
                     /#############((     \\//     ))#############\
                    -###############\\    (oo)    //###############-
-                  -#################\\  / UUU \  //#################-
+                  -#################\\ / UUU \  //#################-
                  -###################\\/  (   )  \/###################-
                 _/|##########/\######(    (   )    )######/\##########|\_
                / |#/\#/\#/\/  \#/\###(   (     )   )###/\#/  \/\#/\#/\| \
@@ -226,16 +229,16 @@ $DieFace20 = @"
 
 #Hashtable used with the roll hit to match up the correct die face
 function Roll_Action_Function {
-  $Roll_Action = @{
+  $RollAction = @{
     1  = { Write-Host "$DieFace1" }
     2  = { Write-Host "$DieFace2" }
     3  = { Write-Host "$DieFace3" }
-    4  = { Write-Host "$Die_Face_4" }
-    5  = { Write-Host "$Die_Face_5" }
-    6  = { Write-Host "$Die_Face_6" }
-    7  = { Write-Host "$Die_Face_7" }
-    8  = { Write-Host "$Die_Face_8" }
-    9  = { Write-Host "$Die_Face_9" }
+    4  = { Write-Host "$DieFace4" }
+    5  = { Write-Host "$DieFace5" }
+    6  = { Write-Host "$DieFace6" }
+    7  = { Write-Host "$DieFace7" }
+    8  = { Write-Host "$DieFace8" }
+    9  = { Write-Host "$DieFace9" }
     10 = { Write-Host "$DieFace10" }
     11 = { Write-Host "$DieFace11" }
     12 = { Write-Host "$DieFace12" }
@@ -248,8 +251,8 @@ function Roll_Action_Function {
     19 = { Write-Host "$DieFace19" }
     20 = { Write-Host "$DieFace20" }
   }
-  if ($Roll_Action.ContainsKey($roll)) {
-    $Roll_Action[$roll].Invoke()
+  if ($RollAction.ContainsKey($roll)) {
+    $RollAction[$roll].Invoke()
   }
 }
 
