@@ -13,7 +13,7 @@ Invoke-DnDDice -Die d20
 .NOTES
 Developed by: ITNinja01
 Version: 2.0.0
-Date: 10-18-2026
+Date: 10-19-2026
 #>
 
 [CmdletBinding()]   
@@ -228,7 +228,7 @@ $DieFace20 = @"
 "@  
 
 #Hashtable used with the roll hit to match up the correct die face
-function Roll_Action_Function {
+function RollActionFunction {
   $RollAction = @{
     1  = { Write-Host "$DieFace1" }
     2  = { Write-Host "$DieFace2" }
@@ -260,31 +260,31 @@ function Roll_Action_Function {
 If ($Die -eq 'd4') {
   $roll = Get-Random -Minimum 1 -Maximum 5
   Write-Host "Your $Die rolled a $roll."
-  Roll_Action_Function
+  RollActionFunction
 }
 ElseIf ($Die -eq 'd6') {
   $roll = Get-Random -Minimum 1 -Maximum 7
   Write-Host "Your $Die rolled a $roll."
-  Roll_Action_Function
+  RollActionFunction
 } 
 ElseIf ($Die -eq 'd8') {
   $roll = Get-Random -Minimum 1 -Maximum 9
   Write-Host "Your $Die rolled a $roll."
-  Roll_Action_Function
+  RollActionFunction
 }   
 ElseIf ($Die -eq 'd10') {
   $roll = Get-Random -Minimum 1 -Maximum 11
   Write-Host "Your $Die rolled a $roll."
-  Roll_Action_Function
+  RollActionFunction
 }
 ElseIf ($Die -eq 'd12') {
   $roll = Get-Random -Minimum 1 -Maximum 13
   Write-Host "Your $Die rolled a $roll."
-  Roll_Action_Function
+  RollActionFunction
 }
 ElseIf ($Die -eq 'd20') {
   $roll = Get-Random -Minimum 1 -Maximum 21  
   Write-Host "Your $Die rolled a $roll."
-  Roll_Action_Function
+  RollActionFunction
 }
 }
